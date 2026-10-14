@@ -1,0 +1,10 @@
+{
+  "name": "reverse-proxy-deployment-test",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A minimal Node.js app for testing r3v3rs3 deployments",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  }
+}
