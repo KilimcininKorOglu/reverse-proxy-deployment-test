@@ -38,9 +38,9 @@ const page = () => `<!doctype html>
 <h1>Hello World - <a href="${REPO}">r3v3rs3</a> app deployment test</h1>
 <p>Served through the <a href="${REPO}">r3v3rs3</a> reverse proxy.</p>
 <dl>
-  <dt>Şu an</dt><dd>${now()}</dd>
-  <dt>Sunucu boot</dt><dd>${uptime()} önce</dd>
-  <dt>Webhook</dt><dd>dual webhook</dd>
+  <dt>Now: </dt><dd>${now()}</dd>
+  <dt>App Deploy: </dt><dd>${uptime()} ago</dd>
+  <dt>Webhook: </dt><dd>dual webhook</dd>
 </dl>
 </body>
 </html>
