@@ -8,7 +8,7 @@ const now = () =>
 http
   .createServer((_req, res) => {
     res.writeHead(200, { "content-type": "text/plain" });
-    res.end(`Hello World\n${now()}\nserver boot ${process.uptime().toFixed(0)}s ago\n`);
+    res.end(`Hello World\n${now()}\nserver boot ${process.uptime().toFixed(0)}s ago (dual webhook)\n`);
   })
   .listen(PORT, () => {
     console.log(`listening on ${PORT}`);
