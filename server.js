@@ -44,7 +44,9 @@ const page = () => `<!doctype html>
 </style>
 </head>
 <body>
-<h1>Hello World - <a href="${REPO}">r3v3rs3</a> app deployment test</h1>
+<h1>Hello World
+<br>
+A minimal Node.js Hello World app for testing <a href="${REPO}">r3v3rs3</a> deploymentsh1>
 <p>Served through the <a href="${REPO}">r3v3rs3</a> reverse proxy.</p>
 <dl>
   <dt>Now: </dt><dd>${now()} (Timezone: Europe/Istanbul)</dd>
