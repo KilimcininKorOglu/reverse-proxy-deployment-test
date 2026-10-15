@@ -7,15 +7,23 @@ const REPO = "https://github.com/KilimcininKorOglu/r3v3rs3";
 const now = () =>
   new Date().toLocaleString("tr-TR", { timeZone: "Europe/Istanbul" });
 
+// Human readable uptime: every unit from a year down to a second, singular or plural.
 const uptime = () => {
-  const s = Math.floor(process.uptime());
-  const h = Math.floor(s / 3600);
-  const m = Math.floor((s % 3600) / 60);
-  const sec = s % 60;
+  const units = [
+    [31536000, "year"],
+    [2592000, "month"],
+    [86400, "day"],
+    [3600, "hour"],
+    [60, "minute"],
+    [1, "second"],
+  ];
+  let rest = Math.floor(process.uptime());
   const parts = [];
-  if (h > 0) parts.push(`${h} hour${h === 1 ? "" : "s"}`);
-  if (m > 0 || h > 0) parts.push(`${m} minute${m === 1 ? "" : "s"}`);
-  parts.push(`${sec} second${sec === 1 ? "" : "s"}`);
+  for (const [size, name] of units) {
+    const n = Math.floor(rest / size);
+    if (n > 0) parts.push(`${n} ${name}${n === 1 ? "" : "s"}`);
+    rest %= size;
+  }
   return parts.join(" ");
 };
 
