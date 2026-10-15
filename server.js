@@ -3,8 +3,9 @@ const http = require("http");
 const PORT = process.env.PORT || 3000;
 const REPO = "https://github.com/KilimcininKorOglu/r3v3rs3";
 
+// tr-TR renders the numeric format with dots: 15.10.2026 21:22:10.
 const now = () =>
-  new Date().toLocaleString("en-GB", { timeZone: "Europe/Istanbul" });
+  new Date().toLocaleString("tr-TR", { timeZone: "Europe/Istanbul" });
 
 const uptime = () => {
   const s = Math.floor(process.uptime());
@@ -38,7 +39,7 @@ const page = () => `<!doctype html>
 <h1>Hello World - <a href="${REPO}">r3v3rs3</a> app deployment test</h1>
 <p>Served through the <a href="${REPO}">r3v3rs3</a> reverse proxy.</p>
 <dl>
-  <dt>Now: </dt><dd>${now()}</dd>
+  <dt>Now: </dt><dd>${now()} (Timezone: Europe/Istanbul)</dd>
   <dt>App Deploy: </dt><dd>${uptime()} ago</dd>
   <dt>Webhook: </dt><dd>dual webhook</dd>
 </dl>
