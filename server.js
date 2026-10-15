@@ -4,7 +4,7 @@ const PORT = process.env.PORT || 3000;
 const REPO = "https://github.com/KilimcininKorOglu/r3v3rs3";
 
 const now = () =>
-  new Date().toLocaleString("tr-TR", { timeZone: "Europe/Istanbul" });
+  new Date().toLocaleString("en-GB", { timeZone: "Europe/Istanbul" });
 
 const uptime = () => {
   const s = Math.floor(process.uptime());
@@ -12,9 +12,9 @@ const uptime = () => {
   const m = Math.floor((s % 3600) / 60);
   const sec = s % 60;
   const parts = [];
-  if (h > 0) parts.push(`${h} saat`);
-  if (m > 0 || h > 0) parts.push(`${m} dakika`);
-  parts.push(`${sec} saniye`);
+  if (h > 0) parts.push(`${h} hour${h === 1 ? "" : "s"}`);
+  if (m > 0 || h > 0) parts.push(`${m} minute${m === 1 ? "" : "s"}`);
+  parts.push(`${sec} second${sec === 1 ? "" : "s"}`);
   return parts.join(" ");
 };
 
